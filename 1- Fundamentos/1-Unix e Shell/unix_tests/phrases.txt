@@ -1,0 +1,10 @@
+cat
+fox 
+dog 
+passarinho
+humano
+vaca
+cow
+flor
+casa
+trybe
