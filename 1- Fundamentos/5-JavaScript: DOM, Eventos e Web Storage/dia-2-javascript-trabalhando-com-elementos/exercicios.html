@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+        section {
+            border-color: black;
+            border-style: solid;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .main-content {
+            background-color: yellow;
+        }
+
+        .main-content .center-content {
+            background-color: red;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content .center-content p {
+            font-style: italic;
+        }
+
+        .main-content .left-content {
+            background-color: green;
+            width: 60%;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .main-content .left-content .small-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 100%;
+        }
+
+        .main-content .right-content {
+            background-color: blue;
+            width: 60%;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .main-content .description {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        //1ºexercício
+
+        let tagFather = document.getElementsByTagName('body')[0];
+        let tagH1 = document.createElement('h1');
+        tagH1.innerText = 'Exercício 5.2 - JavaScript DOM';
+        tagFather.appendChild(tagH1);
+
+        //2ºexercício
+
+        let tagMain = document.createElement('main');
+        tagMain.className = 'main-content';
+        tagFather.appendChild(tagMain);
+
+        //3ºexercício
+
+        let tagCenterSection = document.createElement('section');
+        tagCenterSection.className = 'center-content';
+        tagMain.appendChild(tagCenterSection);
+
+        //4ºexercício
+
+        let tagP = document.createElement('p');
+        tagCenterSection.appendChild(tagP);
+
+        //5ºexercício
+
+        let tagLeftSection = document.createElement('section');
+        tagLeftSection.className = 'left-content';
+        tagMain.appendChild(tagLeftSection);
+
+        //6ºexercício
+
+        let tagRightSection = document.createElement('section');
+        tagRightSection.className = 'right-content';
+        tagMain.appendChild(tagRightSection);
+
+        //7ºexercício
+
+        let leftImage = document.createElement('img');
+        leftImage.src = 'https://picsum.photos/200';
+        leftImage.className = 'small-image';
+        tagLeftSection.appendChild(leftImage);
+
+        //8ºexercício
+
+        let tagUl = document.createElement('ul');
+        tagRightSection.appendChild(tagUl);
+        let arrayNums = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+        for (let i in arrayNums) {
+            let tagLi = document.createElement('li');
+            tagLi.innerText = arrayNums[i];
+            tagUl.appendChild(tagLi);
+        }// tirar duvida porque so cria mais de uma tag li quando o createElement('li') esta dentro do for
+
+        //9ºexercício
+
+        for (let index = 1; index <= 3; index++) {
+            let tagH3 = document.createElement('h3');
+            tagH3.innerText = 'Texto ' + index;
+            tagMain.appendChild(tagH3);
+        }
+
+        //1ºexercício -extra
+
+        tagH1.className = 'title';
+
+        //2ºexercício -extra
+
+        for (let index = 0; index < 3; index++) {
+            document.getElementsByTagName('h3')[index].className = 'description';
+        }
+
+        //3ºexercício -extra
+
+        tagMain.removeChild(tagLeftSection);
+
+        //4ºexercício -extra
+
+        tagRightSection.style.marginRight = 'auto';
+
+        //5ºexercício -extra
+
+        tagMain.style.backgroundColor = 'green';
+
+        //6ºexercício -extra
+
+        let getLi = document.getElementsByTagName('li');
+        for (let index = getLi.length - 1; index > 7; index--) {
+            tagUl.removeChild(getLi[index]);
+        }
+
+    </script>
+</body>
+
+</html>
