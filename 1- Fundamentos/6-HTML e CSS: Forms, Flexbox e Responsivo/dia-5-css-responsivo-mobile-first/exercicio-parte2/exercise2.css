@@ -1,0 +1,174 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: purple;
+}
+
+header {  
+  background-color: rgb(218, 214, 214);
+  padding: 5px;
+}
+
+header p {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+  color: purple;
+}
+
+header ul {
+  padding-left: 20px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  color: purple;
+
+}
+
+aside, article {
+  background-color: rgb(218, 214, 214);
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5%;
+}
+
+footer {
+  background-color: rgb(218, 214, 214);
+  padding: 6px;
+}
+
+@media screen and (min-width: 401px) {
+  body {
+    background-color: saddlebrown;
+    font-size: 1.2em;
+  }
+  
+  aside {
+    background-color: inherit;
+    margin: 0;    
+  }
+
+  header {
+    background-color: rgb(207, 204, 35);
+    margin-bottom: 20px;
+    border: 15px ridge rgb(124, 122, 9);
+  }
+
+  header p {
+    color: rgb(92, 40, 3);
+    font-size: 2em;
+  }
+
+  h1, h2, h3 {
+    color: rgb(92, 40, 3);
+    font-size: 1.5em;
+  }
+
+  section {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(207, 204, 35); 
+    margin: 10px 20px;
+    border: 15px ridge rgb(124, 122, 9);
+  }
+
+  article {
+    background-color: rgb(207, 204, 35); 
+    border-radius: 0;
+    border: 15px ridge rgb(124, 122, 9);
+  }
+
+  footer {
+    background-color: rgb(207, 204, 35);
+    border: 15px ridge rgb(124, 122, 9);
+  }
+
+}
+
+@media screen and (min-width: 801px) {
+  html {
+    display: flex;
+    justify-content: center;
+  }
+
+  body {
+    background-color: darkgreen;
+    font-size: 1.4em;
+    max-width: 1500px;
+  }
+  
+  aside {
+    background-color: inherit;
+    margin: 0;    
+  }
+
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(176, 228, 245);
+    margin-bottom: 20px;
+    border: none;
+    
+  }
+
+  header p {
+    margin: 0;
+    color: darkgreen;
+    font-size: 2.2em;
+    text-shadow: 3px 3px 3px darkgreen;
+  }
+  
+  nav {
+    width: 30%;
+    height: 100%;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 100%;
+    font-weight: bold;
+    color: darkgreen;
+    text-shadow: 3px 3px 3px darkgreen;
+  }  
+
+  h1, h2, h3 {
+    color: darkgreen;
+    font-size: 1.8em;
+    text-shadow: 3px 3px 3px darkgreen;
+  }
+
+  section {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(176, 228, 245); 
+    margin: 30px 50px;
+    border-radius: 5%;
+    border: none;
+    box-shadow: 10px 10px 10px black;
+  }
+
+  article {
+    background-color: rgb(176, 228, 245); 
+    margin: 20px 50px;
+    border-radius: 3%;
+    border: none;
+    box-shadow: 10px 10px 10px black;
+    text-align: justify;
+    padding: 20px;
+  }
+
+  footer {
+    background-color: rgb(176, 228, 245);
+    border: none;
+  }
+}

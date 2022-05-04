@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>formulário</title>
+</head>
+
+<body>
+  <fieldset>
+
+    <form action="" method="get">
+      <label for="full-name">Nome:
+        <input type="text" name="name" id="full-name" min="10" max="40" placeholder="Nome Completo" required>
+      </label>
+
+      <br>
+
+      <label for="user-email">E-mail:
+        <input type="email" name="email" id="user-email" min="10" max="50" required>
+      </label>
+
+      <br>
+
+      <label for="destiny-1">Destino Preferido:
+        <input type="radio" id="destiny-1" name="trip" value="Cidade" required>Cidade
+      </label>
+      <label for="destiny-2">
+        <input type="radio" id="destiny-2" name="trip" value="Campo" required>Campo
+      </label>
+      <label for="destiny-3">
+        <input type="radio" id="destiny-3" name="trip" value="Praia" required>Praia
+      </label>
+      <label for="destiny-4">
+        <input type="radio" id="destiny-4" name="trip" value="Montanhas" required>Montanhas
+      </label>
+
+      <p>Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
+      <textarea name="Porque ganhar" id="user-why" cols="30" rows="10" maxlength="500" required></textarea>
+
+      <p>Qual a melhor data para realizar sua viagem?</p>
+      <label for="user-date">Data:
+        <input type="date" name="date" id="user-date" required>
+      </label>
+
+      <br>
+
+      <input type="checkbox" name="receber oportunidades">Gostaria de receber outras incríveis oportunidades oferecidas
+      pela Trybe?
+
+      <br>
+
+      <input type="checkbox" id="agree-img" name="Concordo com uso" required>Concordo que imagens das minhas férias
+      poderão ser usadas na
+      divulgação de concursos
+      futuros.
+
+      <br>
+
+      <button id="send" type="submit">Enviar</button>
+      <button id="clear-form" type="reset">Apagar</button>
+    </form>
+  </fieldset>
+
+  <script>
+    function verify() {
+      const nameLength = document.querySelector('#full-name').value.length;
+      const emailLength = document.querySelector('#user-email').value.length;
+      const whyLength = document.querySelector('#user-why').value.length;
+      let validName = true;
+      let validEmail = true;
+      let validWhy = true;
+      if (nameLength < 10 || nameLength > 40) {
+        validName = false;
+      }
+
+      if (emailLength < 10 || emailLength > 50) {
+        validEmail = false;
+      }
+
+      if (whyLength > 500) {
+        validWhy = false;
+      }
+      if (validName && validEmail && validWhy) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function sendForm(event) {
+      event.preventDefault();
+      if (verify()) {
+        alert('Dados enviados com sucesso! Obrigado por participar do concurso TrybeTrip.');
+      } else {
+        alert('Dados Inválidos');
+      }
+    }
+
+    function btnSend() {
+      const btn = document.querySelector('#send');
+      btn.addEventListener('click', sendForm);
+    }
+    btnSend();
+
+  </script>
+</body>
+
+</html>
